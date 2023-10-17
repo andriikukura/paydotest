@@ -50,7 +50,21 @@ module.exports = {
                         loader: 'sass-loader'
                     }
                 ]
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg|webp)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192, // Use url-loader for images smaller than 8KB, otherwise use file-loader
+                            name: '[name].[ext]', // Keep the original file name and extension
+                            outputPath: 'images', // Output images to an "images" directory in your output folder
+                            publicPath: 'images/', // Adjust the public path as needed
+                        },
+                    },
+                ],
+            },
         ]
     }
 }
