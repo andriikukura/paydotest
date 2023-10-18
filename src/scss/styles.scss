@@ -14,7 +14,9 @@ $font-family: 'Roboto', sans-serif;
 .container {
   max-width: 1240px;
 }
-
+body {
+  overflow-X: hidden;
+}
 //Button Styles
 .button--footer {
   display: inline-block;
@@ -160,6 +162,9 @@ header {
   padding-bottom: 255px;
   background-color: $purple;
   z-index: 0;
+  @media screen and  (min-width: 1100px) and (max-width: 1440px) {
+    padding-bottom: 330px;
+  }
 }
 
 .ads {
