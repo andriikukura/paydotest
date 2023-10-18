@@ -16,6 +16,62 @@ $font-family: 'Roboto', sans-serif;
 }
 
 //Button Styles
+.button--footer {
+  display: inline-block;
+  position: relative;
+  font-family: $font-family;
+  padding: 0 16px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 6px;
+  color: $primary-blue;
+  text-decoration: none;
+  //background-color: $primary-white;
+  transition: all 0.5s;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-white;
+    border-radius: 6px;
+    transition: all 0.3s;
+    z-index: -1;
+  }
+  &:hover {
+    &:before {
+      opacity: 0 ;
+      transform: scale(0.5,0.5);
+    }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid $primary-white;
+    border-radius: 6px;
+    transform: scale(1.2,1.2);
+  }
+  &:hover {
+    color: $primary-white;
+    &:after {
+      opacity: 1;
+      transform: scale(1,1);
+    }
+  }
+}
+
 .button {
   display: inline-block;
   position: relative;
@@ -200,6 +256,24 @@ header {
     @media (max-width: 767.98px) {
       width: 80%;
     }
+  }
+}
+
+//Footer Section
+.footer {
+  background-color: $primary-blue;
+  padding: 70px 0;
+  position: relative;
+  z-index: 0;
+}
+.footer__title {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  color: $primary-white;
+  @media (max-width: 767.98px) {
+    font-size: 40px;
+    line-height: 40px;
   }
 }
 
